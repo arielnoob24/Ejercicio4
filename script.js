@@ -10,7 +10,7 @@ function obtenerDatosUsuario() {
     setTimeout(() => {
       const exito = Math.random() > 0.3;
       if (exito) {
-        resolve({ usuario: "Ana", rol: "estudiante" });
+        resolve({ usuario: "Ariel", rol: "estudiante" });
       } else {
         reject(new ServicioError("No se pudo conectar con el servicio"));
       }
