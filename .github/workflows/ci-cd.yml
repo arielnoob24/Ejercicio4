@@ -44,6 +44,8 @@ jobs:
         run: |
           mkdir _site
           cp index.html styles.css script.js _site/
+          # Cache busting: versiona CSS y JS con el commit para que el navegador no use copias viejas
+          sed -i "s/styles\.css\"/styles.css?v=${GITHUB_SHA::7}\"/; s/script\.js\"/script.js?v=${GITHUB_SHA::7}\"/" _site/index.html
 
       - uses: actions/configure-pages@v5
 
