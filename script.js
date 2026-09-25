@@ -23,4 +23,12 @@ const resultado = document.getElementById("resultado");
 
 boton.addEventListener("click", async () => {
   resultado.textContent = "Cargando...";
+  try {
+    const datos = await obtenerDatosUsuario();
+    resultado.textContent = `Bienvenido, ${datos.usuario} (${datos.rol})`;
+  } catch (error) {
+    resultado.textContent = `Error: ${error.message}`;
+  } finally {
+    console.log("Intento de carga finalizado");
+  }
 });
