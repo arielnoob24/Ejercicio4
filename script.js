@@ -17,3 +17,10 @@ function obtenerDatosUsuario() {
     }, 800);
   });
 }
+
+const boton = document.getElementById("btnCargar");
+const resultado = document.getElementById("resultado");
+
+boton.addEventListener("click", async () => {
+  resultado.textContent = "Cargando...";
+});
